@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(244, 244, 244);
+    font-size: clamp(14px, 1.5vw, 20px);
+}
+
+body {
+    background-color: hsl(0, 20%, 8%);
+}
+
+@mixin flex-column($gap: 0rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+section {
+    max-width: 1800px;
+}
+
+main {
+    width: 100%;
+    @include flex-column(2rem);
+    align-items: center;
+
+    section.view1 {
+        width: 100%;
+        @include flex-column(.8rem);
+        padding: .8rem;
+
+        .top {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: .8rem;
+            }
+        }
+
+        .bottom {
+            background-color: #1f1b1be3;
+            border-radius: .8rem;
+            padding: 1.5rem;
+            font-weight: 200;
+            @include flex-column(4rem);
+
+            .text {
+                @include flex-column(.5rem);
+                font-weight: 200;
+
+                p {
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    line-height: 2rem;
+                }
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    line-height: 3.5rem;
+                }
+
+                button {
+                    color: black;
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: .7rem 1rem;
+                    border-radius: 0.5em;
+                }
+            }
+        }
+    }
+
+    section.view2 {
+        @include flex-column(1.5rem);
+        width: 100%;
+        padding: .8rem;
+
+        .top,
+        .bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            .element {
+                text-align: center;
+
+                // @include flex-column(.3rem);
+                h2 {
+                    font-size: 2rem;
+                    font-weight: 350;
+
+                }
+
+                small {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    section.view3 {
+        width: 100%;
+        padding: .8rem;
+        @include flex-column(.8rem);
+
+        img {
+            width: 100%;
+            border-radius: .8rem;
+        }
+
+        .bottom {
+            background-color: #1f1b1be3;
+            border-radius: .8rem;
+            padding: 1.5rem;
+            font-weight: 200;
+            @include flex-column(4rem);
+
+            .text {
+                @include flex-column(.5rem);
+                font-weight: 200;
+
+                p {
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    line-height: 2rem;
+                }
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    line-height: 3.5rem;
+                }
+            }
+        }
+    }
+
+    section.view4 {
+        width: 100%;
+        padding: .8rem;
+        @include flex-column(.8rem);
+
+        img {
+            width: 100%;
+            border-radius: .8rem;
+        }
+
+        .bottom {
+            background-color: #1f1b1be3;
+            border-radius: .8rem;
+            padding: 2rem;
+            font-weight: 200;
+            @include flex-column(4rem);
+
+            .text {
+                @include flex-column(.5rem);
+
+
+                p {
+                    font-size: 1.1rem;
+                    opacity: 0.8;
+                    line-height: 2rem;
+                }
+
+                h1 {
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    line-height: 3.5rem;
+                }
+            }
+        }
+    }
+
+    section.view5 {
+        @include flex-column(2rem);
+        width: 100%;
+        padding: 1rem;
+
+        .card:nth-child(1){
+            background-image: url('https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd7d003dfb6a1bdecb_team-01.webp');
+        }
+        .card:nth-child(2){
+            background-image: url('https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd2e12fa747e999689_team-02.webp');
+        }
+        .card:nth-child(3){
+            background-image: url('https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbdc1f945f817bf4fd7_team-03.webp');
+        }
+        .card {
+            border-radius: .8rem;
+            width: 100%;
+
+            background-size: cover;
+            aspect-ratio: 1/1;
+            text-transform: uppercase;
+            @include flex-column(0rem);
+            justify-content: space-between;
+            padding: 1rem;
+
+            .icon,.bottom{
+                background-color: rgba(255, 255, 255, .05);;
+                backdrop-filter: blur(5px);
+                border: .2px solid white;
+                border-radius: 0.7rem;
+                padding: 0.5rem;
+
+            }
+
+            .top {
+                display: flex;
+                gap: 1rem;
+                justify-content: flex-end;
+                
+                .icon {
+                    width: fit-content;
+                    border-radius: 50%;
+                }
+                
+            }
+            .bottom{
+                display: flex;
+                gap: 1rem;
+                justify-content: space-between;
+                padding: 1rem 1rem;
+            }
+
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        section.view1 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .top {
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+            }
+
+            .text {
+
+                gap: 1.5rem;
+
+                p {
+                    width: 80%;
+                }
+
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+
+        section.view2 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+
+        section.view3 {
+            flex-direction: row-reverse;
+            align-items: stretch;
+            padding: 1rem 4rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .top {
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .bottom {
+
+                justify-content: space-between;
+                padding: 3rem;
+            }
+
+            .paras {
+                display: flex;
+                gap: 2rem;
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        section.view4 {
+            flex-direction: row;
+            align-items: stretch;
+            padding: 1rem 4rem;
+
+            .top,
+            .bottom {
+                width: 50%;
+            }
+
+            .top {
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .bottom {
+
+                justify-content: space-between;
+                padding: 3rem;
+            }
+
+            .paras {
+                display: flex;
+                gap: 2rem;
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+        section.view5 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+    }
+}
